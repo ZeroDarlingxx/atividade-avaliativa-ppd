@@ -21,20 +21,22 @@ src/
 
 Cada pasta contém uma solução independente para o problema.
 
-Requisitos
+## Requisitos
+
 Java JDK 8 ou superior
 
-Compilação
+## Compilação
+
 A partir da pasta src:
+Java JDK 8 ou superior
 
-javac tarefaX/*.java
+javac tarefa1/JantarDosFilosofos.java
 
-(Substitua tarefaX pela tarefa desejada.)
+## Execução
+cd tarefa1-jantardosfilosofos-deadlock/src
+java tarefa1.JantarDosFilosofos
 
-Execução
-java tarefaX.JantarDosFilosofos
-Testes
-
+Repita o processo para as outras tarefas, ajustando o caminho e nome da classe.
 Cada tarefa imprime logs detalhados da execução e estatísticas finais após o período configurado de execução.
 
 Relatório Comparativo
