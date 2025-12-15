@@ -3,6 +3,14 @@ package tarefa3;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
 
+/**
+ * Solucao utilizando semaforo para limitar o numero
+ * de filosofos que podem tentar pegar os garfos simultaneamente.
+ * 
+ * O semaforo permite no maximo 4 filosofos na regiao critica,
+ * garantindo que pelo menos um consiga obter ambos os garfos,
+ * prevenindo deadlock.
+ */
 public class Filosofo extends Thread {
 
     private final int id;
@@ -11,6 +19,8 @@ public class Filosofo extends Thread {
     private final Semaphore semaforo;
     private final Random random = new Random();
 
+    // Contador utilizado para coleta de estatisticas
+    // sobre quantas vezes o filosofo conseguiu comer
     private int vezesComeu = 0;
 
     public Filosofo(int id, Garfo esquerdo, Garfo direito, Semaphore semaforo) {
@@ -20,16 +30,24 @@ public class Filosofo extends Thread {
         this.semaforo = semaforo;
     }
 
+    // Simula o tempo em que o filosofo esta pensando
     private void pensar() throws InterruptedException {
-        log("está pensando");
+        log("esta pensando");
         Thread.sleep((random.nextInt(3) + 1) * 1000);
     }
 
+    /**
+     * Metodo responsavel por controlar o acesso
+     * a regiao critica utilizando um semaforo.
+     */
     private void comer() throws InterruptedException {
 
-        log("tentando entrar na região crítica (semaforo)");
+        // O semaforo limita a quantidade de filosofos
+        // que podem tentar acessar os garfos ao mesmo tempo
+        log("tentando entrar na regiao critica (semaforo)");
         semaforo.acquire(); // limita a 4 filosofos
 
+        // REGIAO CRITICA: tentativa de pegar os dois garfos
         try {
             log("tentando pegar o garfo esquerdo (" + garfoEsquerdo.getId() + ")");
             synchronized (garfoEsquerdo) {
@@ -38,22 +56,23 @@ public class Filosofo extends Thread {
                 log("tentando pegar o garfo direito (" + garfoDireito.getId() + ")");
 
                 synchronized (garfoDireito) {
-                    log("pegou os dois garfos e está comendo");
+                    log("pegou os dois garfos e esta comendo");
                     vezesComeu++;
                 }
             }
 
-            // Simula tempo de comer fora da regiao critica
+            // Simula o tempo de alimentacao fora da regiao critica
             Thread.sleep((random.nextInt(3) + 1) * 1000);
             log("terminou de comer e soltou os garfos");
 
         } finally {
+            // Liberacao do semaforo garante progresso do sistema
             semaforo.release();
         }
     }
 
     private void log(String msg) {
-        System.out.println("Filósofo " + id + ": " + msg);
+        System.out.println("Filosofo " + id + ": " + msg);
     }
 
     public int getVezesComeu() {
