@@ -8,10 +8,15 @@ O "Jantar dos Filósofos" é um problema clássico de ciência da computação q
 
 ##  Estrutura do Projeto
 src/
+
  ├── tarefa1/
+ 
  ├── tarefa2/
+ 
  ├── tarefa3/
+ 
  ├── tarefa4/
+ 
  └── tarefa5/
 
 Cada pasta contém uma solução independente para o problema.
