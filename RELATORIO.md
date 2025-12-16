@@ -26,11 +26,13 @@ Número de Refeições em 5 minutos
 A Tarefa 4 apresentou a menor variação entre os filósofos, indicando maior fairness. A Tarefa 3 apresentou boa distribuição, enquanto a Tarefa 2 demonstrou maior variabilidade entre os filósofos.
 
 
+
 ## 4-Análise Comparativa
 
 
-### Prevenção de Deadlock
 
+
+### Prevenção de Deadlock
 
 Tarefa 1: Não há qualquer mecanismo de prevenção de deadlock. Todos os filosofos tentam adquirir os garfos na mesma ordem, o que pode gerar espera circular caso cada filosofo obtenha o garfo esquerdo e fique bloqueado aguardando o garfo direito.
 
@@ -39,6 +41,8 @@ Tarefa 2: Deadlock prevenido por meio da ordem assimétrica na aquisição dos g
 Tarefa 3: Deadlock prevenido pela limitação do número de filósofos concorrentes via semáforo.
 
 Tarefa 4: Deadlock eliminado pelo controle centralizado do monitor.
+
+
 
 
 ### Prevenção de Starvation
@@ -52,9 +56,13 @@ Tarefa 3: Reduz significativamente a possibilidade de starvation.
 Tarefa 4: Garante fairness e elimina starvation por construção.
 
 
+
+
 ### Performance e Throughput
 
 A solução com semáforo apresentou o maior throughput, seguida pela solução da Tarefa 2. A solução com monitor apresentou menor throughput devido à centralização e maior controle.
+
+
 
 
 ### Complexidade de Implementação
@@ -68,9 +76,12 @@ Tarefa 3: Complexidade moderada.
 Tarefa 4: Complexidade Alta devido ao uso de monitores e mecanismos de fairness.
 
 
+
+
 ## 5. Conclusão
 
 Cada solução é adequada para diferentes cenários. A solução com semáforo é ideal quando o desempenho é prioritário, enquanto a solução com monitor é mais apropriada quando fairness e previsibilidade são requisitos essenciais. A solução por ordenação de recursos oferece simplicidade com desempenho intermediário.
+
 
 
 
