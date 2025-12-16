@@ -29,7 +29,7 @@ A Tarefa 4 apresentou a menor variação entre os filósofos, indicando maior fa
 
 ## 4-Análise Comparativa
 
-
+<br>
 
 
 ### Prevenção de Deadlock
@@ -42,7 +42,7 @@ Tarefa 3: Deadlock prevenido pela limitação do número de filósofos concorren
 
 Tarefa 4: Deadlock eliminado pelo controle centralizado do monitor.
 
-
+<br>
 
 
 ### Prevenção de Starvation
@@ -55,14 +55,14 @@ Tarefa 3: Reduz significativamente a possibilidade de starvation.
 
 Tarefa 4: Garante fairness e elimina starvation por construção.
 
-
+<br>
 
 
 ### Performance e Throughput
 
 A solução com semáforo apresentou o maior throughput, seguida pela solução da Tarefa 2. A solução com monitor apresentou menor throughput devido à centralização e maior controle.
 
-
+<br>
 
 
 ### Complexidade de Implementação
@@ -75,12 +75,13 @@ Tarefa 3: Complexidade moderada.
 
 Tarefa 4: Complexidade Alta devido ao uso de monitores e mecanismos de fairness.
 
-
+<br>
 
 
 ## 5. Conclusão
 
 Cada solução é adequada para diferentes cenários. A solução com semáforo é ideal quando o desempenho é prioritário, enquanto a solução com monitor é mais apropriada quando fairness e previsibilidade são requisitos essenciais. A solução por ordenação de recursos oferece simplicidade com desempenho intermediário.
+
 
 
 
